@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+ <html class="no-js"  ng-app="tmoApp"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>TMO - Taulava Madhwa Okkoota</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/icomoon-social.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="css/leaflet.css" />
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/screen.css">
+		<link rel="stylesheet" href="css/wa-mediabox.min.css">
+		<link rel="stylesheet" href="css/default.min.css">
+		<!--<link rel="stylesheet" href="css/imageGallery.css">-->
+
+		
+        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body ng-controller="homeCntrl">
+        <!-- Navigation & Logo-->
+
+        <div class="mainmenu-wrapper">
+	        <div class="container">
+	        	<div class="menuextras">
+					<div class="extras">
+						<ul>
+						<li><a href="index.html#/page-login">Login</a></li>
+							<div ng-show="authenticated.value" ng-cloak>
+								<li><a href="index.html#/page-login">Login</a></li>
+							</div>
+							<div ng-show="authenticated.value" ng-cloak>
+								Welcome {{auth.profile.name}}
+								<li><a href="index.html">Logout</a></li>
+							</div>
+			        	</ul>
+					</div>
+		        </div>
+		        <nav id="mainmenu" class="mainmenu">
+					<ul>
+						<li class="logo-wrapper"><a href="index.html"><img src="img/Logo1.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
+						<li class="active">
+							<a href="index.html">Home</a>
+						</li>
+						<li class="has-submenu">
+							<a href="features.html">Project</a>
+								<div class="mainmenu-submenu">
+								<div class="mainmenu-submenu-inner"> 
+									<div>
+										<h4>Project</h4>
+										<ul>
+											<li><a href="index.html#/Ratha-Yathre">Taulava Madhwa Ratha Yathre</a></li>
+											<li><a href="index.html#/socialactivity">Spiritual Activity</a></li>
+											<li><a href="page-homepage-sample.html">Socio-Cultural Activity</a></li>
+											<li><a href="page-homepage-sample.html">TMO Vidya Nidhi</a></li>
+										</ul>
+									</div>
+								</div><!-- /mainmenu-submenu-inner -->
+							</div><!-- /mainmenu-submenu -->
+						</li>
+						<li class="has-submenu">
+							<a href="#">Get Involved</a>
+								<div class="mainmenu-submenu">
+								<div class="mainmenu-submenu-inner"> 
+									<div>
+										<h4>Get Involved</h4>
+										<ul>
+											<li><a href="index.html#/register">As An Volunteer</a></li>
+											<li><a href="index.html#/memberregister">As a Member</a></li>
+										</ul>
+									</div>
+								</div><!-- /mainmenu-submenu-inner -->
+							</div><!-- /mainmenu-submenu -->
+						</li>
+						<li class="has-submenu">
+							<a href="features.html">Galleries And Articles</a>
+								<div class="mainmenu-submenu">
+								<div class="mainmenu-submenu-inner"> 
+									<div>
+										<h4>Galleries And Articles</h4>
+										<ul>
+											<li><a href="index.html#/imageGallery">Image Gallery</a></li>
+											<li><a href="index.html#/discssionAndForm">Discussion and Forums</a></li>
+											<li><a href="page-homepage-sample.html">Download</a></li>
+											<li><a href="index.html#/audioGallery">Audio Gallery</a></li>
+										</ul>
+									</div>
+								</div><!-- /mainmenu-submenu-inner -->
+							</div><!-- /mainmenu-submenu -->
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+			<!-- Homepage Slider -->
+        <div class="homepage-slider">
+        	<div id="sequence">
+				<ul class="sequence-canvas">
+					<!-- Slide 1 -->
+					<li class="bg4">
+						<!-- Slide Title -->
+						<h2 class="title">Socio-Cultural Activities</h2>
+						<!-- Slide Text -->
+						<h3 class="subtitle">TMO has been actively organizing social
+					cultural activities like Yakshagana,Himmela classes</h3>
+						<!-- Slide Image -->
+						<img class="slide-img" src="img/homepage-slider/culture-udupi.jpg" alt="Slide 1" />
+					</li>
+					<!-- End Slide 1 -->
+					<!-- Slide 2 -->
+					<li class="bg3">
+						<!-- Slide Title -->
+						<h2 class="title">Spiritual Activity</h2>
+						<!-- Slide Text -->
+						<h3 class="subtitle"> TMO has been
+					conducting several activities to convert words into action, Through
+					Parayana, Bhajane, Paata and Pravachana by scholars TMO tries to
+					erdicate the ignorance of society!</h3>
+						<!-- Slide Image -->
+						<img class="slide-img" src="img/homepage-slider/SpiritualActivity.JPG" alt="Slide 2" />
+					</li>
+					<!-- End Slide 2 -->
+					<!-- Slide 3 -->
+					<li class="bg1">
+						<!-- Slide Title -->
+						<h2 class="title">Taulava Madhwa Marriage Matrimonial</h2>
+						<!-- Slide Text -->
+						<h3 class="subtitle">Taulava Maadhwa Okkkotta is working
+					towards Marriage alliance to community's eligible bachelors.On 15th
+					and guidance of Parama Poojya Sri Sri Sugunendra Theertha swamiji
+					of Puttige </h3>
+						<!-- Slide Image -->
+						<img class="slide-img" src="img/homepage-slider/TMOMarriageMatrimonial.jpg" alt="Slide 3" />
+					</li>
+					<!-- End Slide 3 -->
+				</ul>
+				<div class="sequence-pagination-wrapper">
+					<ul class="sequence-pagination">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</div>
+			</div>
+        </div>
+        <!-- End Homepage Slider -->
+	
+		<div id="content">
+			<div ng-view></div>
+		</div>
+		
+		
+		 <div class="imageSection" id="sectionId">
+				<div id="gallery" style=" margin-left: 150px;">
+					<a href="demo-files/image1.jpg" data-mediabox="gallery-1" data-title="Sample image 1">
+						<img src="demo-files/image1-thumb.jpg" alt="Image 1" />
+					</a>
+					<a href="demo-files/image2.jpg" type="media_type" data-mediabox="gallery-1">
+						<img src="demo-files/image2-thumb.jpg" alt="Image 2" />
+					</a>
+					<a href="demo-files/image3.png"  type="media_type" data-mediabox="gallery-1" data-title="Sample image 3">
+						<img src="demo-files/image3-thumb.png" alt="Image 3" />
+					</a>
+					<a href="https://www.youtube.com/embed/FA_8TY9Z5Zg?rel=0" data-iframe="true" data-mediabox="gallery-1" data-width="853" data-height="480" data-title="Sample video">
+						<img src="demo-files/video-thumb.jpg" alt="Video" />
+					</a>
+				</div>
+		</div>
+   
+ <div ng-include src="'footer.html'"></div>
+
+        <!-- Javascripts -->
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/bootstrap.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+        <script src="js/jquery.fitvids.js"></script>
+        <script src="js/jquery.sequence-min.js"></script>
+        <script src="js/jquery.bxslider.js"></script>
+        <script src="js/main-menu.js"></script>
+        <script src="js/template.js"></script>
+		<script src="js/wa-mediabox.min.js"></script>	 
+		<script src="js/generic_controller/app.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script src="js/audio.js"></script>
+    </body>
+</html>
