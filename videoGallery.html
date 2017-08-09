@@ -1,0 +1,64 @@
+        <!-- Page Title -->
+		<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Gallery</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+<div class="row">
+<hr/>
+</div>
+        <div class="section" ng-controller="videoGalleryCntrl as controller">
+			<div class="row">
+					<div class="col-md-8 col-sm-6">
+						<div class="portfolio-item">
+							
+								
+									<div class="videogular-container">
+										<videogular vg-player-ready="controller.onPlayerReady($API)" vg-complete="controller.onCompleteVideo()" vg-theme="controller.config.theme.url" vg-youtube="rel=1;showinfo=1" id="videogular_id">
+											<vg-media vg-src="controller.config.sources"
+													  vg-tracks="controller.config.tracks">
+											</vg-media>
+
+											<vg-controls>
+												<vg-play-pause-button></vg-play-pause-button>
+												<vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+												<vg-scrub-bar>
+													<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+												</vg-scrub-bar>
+												<vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+												<vg-volume>
+													<vg-mute-button></vg-mute-button>
+													<vg-volume-bar></vg-volume-bar>
+												</vg-volume>
+												<vg-fullscreen-button></vg-fullscreen-button>
+											</vg-controls>
+
+											<vg-overlay-play></vg-overlay-play>
+											<vg-buffering></vg-buffering>
+											<vg-poster vg-url='controller.config.plugins.poster'></vg-poster>
+										</videogular>
+									</div>
+									
+								
+					</div>
+
+				</div><!-- dd-->
+				<div class="col-md-4 col-sm-6">
+				<div class="playlist">
+										<ul id="playListId">
+											<!--<li><a ng-click="controller.setVideo(0)">Pale Blue Dot</a></li>
+											<li><a ng-click="controller.setVideo(1)">Big Buck Bunny</a></li>-->
+											<li ng-repeat="video in videoNameList track by $index">
+												<a ng-click="controller.setVideo(this)">{{video.name}}</a>
+											</li>
+										</ul>
+										
+										
+									</div>
+				</div>
+			</div>
+		</div>

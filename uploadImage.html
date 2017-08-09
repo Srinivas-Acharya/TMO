@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h2>File Upload to Download gallary</h2>
+     
+        <form  method="post" enctype="multipart/form-data">
+     
+            <p>Select a file :  <input id="fileDocument" type="file" file-model="myFiles" multiple onchange="angular.element(this).scope().getFileDetails(this)"/></p>
+			<!--<input type="file" name="file" ng-model="document.fileInput" id="file" accept=".pdf" />-->
+           <a href=""  ng-click="uploadDocuments()" class="btn btn-small"><i class="icon-shopping-cart icon-white"></i> Upload</a>
+		   
+		    
+             
+        </form>
+     
+    </body>
+</html>

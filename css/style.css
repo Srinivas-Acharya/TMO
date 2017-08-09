@@ -1,0 +1,12 @@
+#list-wrapper{
+    max-height: 400px;
+    overflow-y: scroll;
+    
+    margin-top: 20px;
+    border: solid 1px black;
+}
+
+h4{
+    padding: 20px;
+}
+

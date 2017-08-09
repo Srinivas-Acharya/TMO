@@ -1,0 +1,85 @@
+        <!-- Page Title -->
+		<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Event Or Article Handler</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+        
+        <div class="section">
+	    	<div class="container">
+				<div class="row">
+					<div class="col-sm-5">
+						<div class="basic-login">
+							<form name="myForm" role="form" id="registration-form" >
+								<div class="form-group">
+		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Type</b></label>
+									<select class="form-control" id="gender" type="text" placeholder="Name" ng-model="type"ng-init="type='Article'">
+										<option  ng-option  value="Article">Article</option>
+										<option   ng-option value="Event">Event</option>
+									</select>
+								</div>
+							<div ng-if="type == 'Event'">
+								<div class="form-group">
+		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Event Name</b></label>
+									<input class="form-control" id="name" type="text" placeholder="Event Name" ng-model="eventName" name="eventName" required>
+									<span style="color:red" class="error" ng-show="myForm.eventName.$touched && myForm.eventName.$invalid">Event Name is Required</span>
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Event Date</b></label>
+									<input class="form-control" id="dob" type="date" placeholder="Event Date" ng-model="eventDate" name="eventDate" required>
+									<span style="color:red" class="error" ng-show="myForm.eventDate.$touched && myForm.eventDate.$invalid">Event Date is Required</span>
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Event Decription</b></label>
+									<textarea  class="form-control" id="registerpassword" placeholder="Event Decription" ng-model="eventDesc" name="eventDesc" required></textarea>
+									<span style="color:red" class="error" ng-show="myForm.eventDesc.$touched && myForm.eventDesc.$invalid">Event Description is Required</span>
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Event Icon/Image</b></label>
+									<input class="form-control" id="registerpassword2" type="file" placeholder="Password" ng-model="eventIcon" name="file" onchange="angular.element(this).scope().uploadFile(this)">
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn pull-right"ng-disabled="(myForm.eventDesc.$invalid || myForm.eventDate.$invalid || myForm.eventName.$invalid)" ng-click=eventSubmit(this)>Submit</button>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							
+							
+									<div ng-if="type == 'Article'">
+								<div class="form-group">
+		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Article Name</b></label>
+									<input class="form-control" id="name" type="text" placeholder="Article Name" ng-model="articleName" name="articleName" required>
+									<span style="color:red" class="error" ng-show="myForm.articleName.$touched && myForm.articleName.$invalid">Article Name is Required</span>
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Article Type</b></label>
+									<select class="form-control" id="articleType" type="text" placeholder="Name" ng-model="articleType" ng-change="getSelectedLocation()" >
+										<option  ng-option selected="selected" value="Generic">Generic</option>
+										<option   ng-option value="Spiritual">Spiritual</option>
+									</select>
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Article Decription</b></label>
+									<textarea  class="form-control" id="registerpassword" placeholder="Article Decription" ng-model="articleDesc" name="articleDesc" required></textarea>
+									<span style="color:red" class="error" ng-show="myForm.articleDesc.$touched && myForm.articleDesc.$invalid">Article Description is Required</span>
+								</div>
+								<div class="form-group">
+		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Article Icon/Image</b></label>
+									<input class="form-control" id="registerpassword2" type="file" placeholder="Password" ng-model="articleIcon" name="file" onchange="angular.element(this).scope().uploadFile(this)">
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn pull-right"ng-disabled="(myForm.articleDesc.$invalid  || myForm.articleName.$invalid)" ng-click=articleSubmit(this)>Submit</button>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							</form>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>

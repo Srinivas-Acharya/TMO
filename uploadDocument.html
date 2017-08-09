@@ -1,0 +1,60 @@
+<html>
+    <body>
+        <h2>File Upload</h2>
+     
+     <!--
+            <p>Select a file :  <input id="fileDocument" multiple type="file" file-model="myFiles"name="files[]" onchange="angular.element(this).scope().getFileDetails(this)"/></p>
+			<!--<input type="file" name="file" ng-model="document.fileInput" id="file" accept=".pdf" />
+           <a href=""  ng-click="uploadDocuments()" class="btn btn-small"><i class="icon-shopping-cart icon-white"></i> Upload</a>
+		   
+		<div ng-show="progressVisible">
+            <div class="percent">{{progress}}%</div>
+            <div class="progress-bar">
+                <div class="uploaded" ng-style="{'width': progress+'%'}"></div>
+				 <div class="container">
+				  <pre>{{log}}</pre>
+				<pb-line progress-key="myLine" options="options"></pb-line>
+				</div>
+            </div>
+        </div>    Upload Log: <pre>{{log}}</pre>
+        -->  
+<form  name="myForm" method="post" enctype="multipart/form-data">		
+		 <div class="container">
+			<div class="row">
+			  
+		<div id="button_cust" class="button" ngf-select="upload($files)" ngf-multiple="true"><b>Click<font color="red"> Here</font> to Select and Upload Your File</b></div>
+		<ul>
+			<li ng-repeat="f in files" style="font:smaller">{{f.name}} {{f.$error}} {{f.$errorParam}}</li>
+		</ul>
+				<p type="text" id="tb" style="    display: none;"></p>
+				<div class="progress" id="progressBar" style="    display: none;">
+					<div id='meter'><div id='progress'></div></div>
+			  </div>
+			  
+		</div>
+		</div>
+			  
+		 <div class="container">
+		 
+			<div class="row">
+			<div class="col-sm-6">
+			<label for="login-username"><i class="icon-user"></i> <b>Enter the Youtube or Other Online Videos Detils</b></label>
+			<div class="form-group">
+				<input name ="url" class="form-control" id="videoUrl" type="text" placeholder="Copy your YOUTUBE video URL" required ng-model="url" ng-pattern="/^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/">
+				<span style="color:red" class="error" ng-show="myForm.url.$touched && myForm.url.$invalid">Please Enter Video URL</span>
+				<span class="error" ng-show="myForm.url.$error.url"> Not valid url!</span>
+				
+				<input name ="name" class="form-control" id="videoName" type="text" placeholder="Please enter Name of Video" required ng-model="name" >
+				<span style="color:red" class="error" ng-show="myForm.name.$touched && myForm.name.$invalid">Please enter the Video Name</span>
+				
+			</div>
+				<div class="form-group">
+					<button type="button" class="btn pull-right" ng-click="saveVideoLink()"ng-disabled="(myForm.name.$invalid || myForm.url.$invalid)">Upload</button>
+				 </div>
+			 </div>
+			 </div>
+		</div>
+       
+    </form>  
+    </body>
+</html>

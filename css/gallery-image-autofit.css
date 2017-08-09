@@ -1,0 +1,12 @@
+.imgClass {
+    width:inherit;
+}
+
+.itemClass
+{
+	border:1px solid pink;
+    width: 20px;
+    float: left;
+    margin: 3px;
+    padding: 3px;
+}

@@ -1,0 +1,37 @@
+	<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Downloads</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+        <div class="eshop-section section">
+	    	<div class="container">
+				<div class="row">
+				 <div ng-repeat="choice in filteredTodos">
+					<div class="col-md-3 col-sm-6">
+						<div class="shop-item">
+						<div class="title">
+								<a id="demo" href=""></a>
+						<h3><a href="">{{choice.name  | trim}}</a></h3>
+							</div>
+							<!-- Add to Cart Button -->
+							<div class="actions">
+								<a href=""  ng-click="downloadPdf(choice.id)" class="btn btn-small"><i class="icon-shopping-cart icon-white"></i>{{choice.name  | trim }}</a>
+							</div>
+						</div>
+						<!-- End Product -->
+					</div>
+				 </div>
+				</div>
+      
+				<div class="row">
+				<style scoped>
+					@import "css/bootstrap-combined.min.css";
+				</style>
+				   <div class="pagination" data-pagination="" data-num-pages="numPages()" data-current-page="currentPage" data-max-size="maxSize"  data-boundary-links="true"></div>
+			</div>
+	    </div>
