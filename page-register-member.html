@@ -14,47 +14,55 @@
 				<div class="row">
 					<div class="col-sm-5">
 						<div class="basic-login">
-							<form role="form" id="registration-form" >
+							<form  name="myForm" role="form" id="registration-form" >
 								<div class="form-group">
 		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Name</b></label>
-									<input class="form-control" id="name" type="text" placeholder="Name" >
+									<input class="form-control" id="name" type="text" placeholder="Name" ng-model="username" name="username"required>
+									<span style="color:red" class="error" ng-show="myForm.username.$touched && myForm.username.$invalid">Name is Required</span>
 								</div>
 								<div class="form-group">
 		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Gender</b></label>
-									<select class="form-control" id="gender" type="text" placeholder="Name" >
-										<option value="Select">Select</option>
+									<select class="form-control" id="gender" type="text" placeholder="Name" ng-model="gender"ng-init="gender='Male'">
 										<option value="Male">Male</option>
 										<option value="Female">Female</option>
 									</select>
 								</div>
 								<div class="form-group">
 		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Date Of Birth</b></label>
-									<input class="form-control" id="dob" type="date" placeholder="Name" >
+									<input class="form-control" id="dob" type="date" placeholder="Name" ng-model="dob">
 								</div>
 								<div class="form-group">
 		        				 	<label for="register-username"><i class="icon-user"></i> <b>Email</b></label>
-									<input class="form-control" id="registerusername" type="email" placeholder="Email id">
+									<input class="form-control" id="registerusername" type="email" placeholder="Email id" name='email'ng-model="email" required>
+									<span style="color:red" class="error" ng-show="myForm.email.$touched && myForm.email.$error.required">Email is Required</span>
+									<span style="color:red" class="error" ng-show="myForm.email.$touched && myForm.email.$error.email">Not Valid Email!</span>
 								</div>
 								<div class="form-group">
 		        				 	<label for="register-password"><i class="icon-lock"></i> <b>Password</b></label>
-									<input class="form-control" id="registerpassword" type="password" placeholder="Password">
+									<input class="form-control" id="registerpassword" type="password" placeholder="Password" ng-model="password" name="password" required ng-maxlength="15" ng-minlength="5">
+									<span style="color:red" class="error" ng-show="myForm.password.$touched && myForm.password.$error.required">Password is Required</span>
+									<span style="color:red" class="error" ng-show="myForm.password.$touched&& myForm.password.$error.maxlength">Sorry You are Exceeding the Limit</span>
+									<span style="color:red" class="error" ng-show="myForm.password.$touched&& myForm.password.$error.minlength">Password Should Contain Atleast 5 Characters</span>
+									
 								</div>
 								<div class="form-group">
 		        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Re-enter Password</b></label>
-									<input class="form-control" id="registerpassword2" type="password" placeholder="Password">
+									<input class="form-control" id="registerpassword2" type="password" placeholder="Password"ng-model="passwordVerification" name="passwordVerification" required data-password-verify="password">
+									<span style="color:red" class="error" ng-show="myForm.passwordVerification.$touched && myForm.passwordVerification.$error.required">Re-enter Password is Required</span>
+									<span style="color:red" class="error" ng-show="myForm.passwordVerification.$touched && myForm.passwordVerification.$error.passwordVerify">Entered Password Do Not Match</span>
 								</div>
 								<div class="form-group">
-									<button type="submit" class="btn pull-right">Register</button>
+									<button type="submit" ng-click="submit()" class="btn pull-right" ng-disabled="(myForm.username.$invalid || myForm.password.$invalid || myForm.email.$invalid || myForm.passwordVerification.$invalid)">Register</button>
 									<div class="clearfix"></div>
 								</div>
 							</form>
 						</div>
 					</div>
 					<div class="col-sm-6 col-sm-offset-1 social-login">
-						<p>You can use your Facebook or Twitter for registration</p>
-						<div class="social-login-buttons">
-							<a href="#" class="btn-facebook-login">Use Facebook</a>
-							<a href="#" class="btn-twitter-login">Use Twitter</a>
+						<p>You can use your Facebook or Google for registration</p>
+						<div style="padding-left: 100px;">
+							<a  ng-click="facebookLogin()" class="btn custom_button_facebook"><i class="fa fa-facebook-square"style="font-size:18px"></i> Use Facebook</a>
+							<a  ng-click="googleLogin()"class="btn custom_button_google"><i class="fa fa-google-plus-square"style="font-size:18px"></i> Use Google +</a>
 						</div>
 					</div>
 				</div>

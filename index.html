@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -7,20 +7,23 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
         <title>TMO - Taulava Madhwa Okkoota</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/icomoon-social.css">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
-
+		<link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/leaflet.css" />
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/screen.css">
 		<link rel="stylesheet" href="css/wa-mediabox.min.css">
 		<link rel="stylesheet" href="css/default.min.css">
-		<!--<link rel="stylesheet" href="css/imageGallery.css">-->
+		<link rel="stylesheet" href="css/divslider.css">
+		<!--<link rel="stylesheet" href="css/videoGallery_cust.css">-->
+		<link rel="stylesheet" href="css/videogular.css">
+		<link rel="stylesheet" href="css/imageGallery.css">
 
 		
         <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -30,72 +33,87 @@
 
         <div class="mainmenu-wrapper">
 	        <div class="container">
-	        	<div class="menuextras">
+	        	<div class="menuextras" id="user_menu" >
 					<div class="extras">
 						<ul>
-						<li><a href="index.html#/page-login">Login</a></li>
-							<div ng-show="authenticated.value" ng-cloak>
-								<li><a href="index.html#/page-login">Login</a></li>
-							</div>
-							<div ng-show="authenticated.value" ng-cloak>
-								Welcome {{auth.profile.name}}
+						<div id="loginInDiv">
+							<li><a href="index.html#/page-login" class="loginInfo">Login</a></li>
+						</div>
+							<div id="logoutDiv" ng-cloak>
+								<div id="welcomeDiv"></div>
 								<li><a href="index.html">Logout</a></li>
-							</div>
+							</div
+			        	</ul>
+					</div>
+					<div class="extras">
+						<ul>
+						<select ng-model="selectedLanguage" ng-change="changeLanguage()">
+						  <option value="en" translate="Kannada"></option>
+						  <option value="ka" translate="English"></option>
+						</select>
 			        	</ul>
 					</div>
 		        </div>
+				
 		        <nav id="mainmenu" class="mainmenu">
 					<ul>
 						<li class="logo-wrapper"><a href="index.html"><img src="img/Logo1.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
 						<li class="active">
-							<a href="index.html">Home</a>
+							<!--<a href="index.html">{{ 'HEADLINE' | translate }}</a>-->
+							<a href="index.html">{{ 'home' | translate }}</a>
 						</li>
 						<li class="has-submenu">
-							<a href="features.html">Project</a>
+							<a href="#">{{ 'project' | translate }}</a>
 								<div class="mainmenu-submenu">
 								<div class="mainmenu-submenu-inner"> 
 									<div>
-										<h4>Project</h4>
+									<!--	<h4>Project</h4>-->
 										<ul>
-											<li><a href="index.html#/Ratha-Yathre">Taulava Madhwa Ratha Yathre</a></li>
-											<li><a href="index.html#/socialactivity">Spiritual Activity</a></li>
-											<li><a href="page-homepage-sample.html">Socio-Cultural Activity</a></li>
-											<li><a href="page-homepage-sample.html">TMO Vidya Nidhi</a></li>
+											<li><a href="index.html#/Ratha-Yathre">{{ 'ratha' | translate }}</a></li>
+											<li><a href="index.html#/spirutualactivity">{{ 'spiritual' | translate }}</a></li>
+											<li><a href="index.html#/socialactivity">{{ 'social' | translate }}</a></li
+											<li><a href="index.html#/matrimony">{{ 'matrimony' | translate }}</a></li>
+											<li><a href="index.html#/vidyanidhi">{{ 'vidyanidhi' | translate }}</a></li>
 										</ul>
 									</div>
 								</div><!-- /mainmenu-submenu-inner -->
 							</div><!-- /mainmenu-submenu -->
 						</li>
 						<li class="has-submenu">
-							<a href="#">Get Involved</a>
+							<a href="#">{{ 'involve' | translate }}</a>
 								<div class="mainmenu-submenu">
 								<div class="mainmenu-submenu-inner"> 
 									<div>
-										<h4>Get Involved</h4>
+										<!--<h4>Get Involved</h4>-->
 										<ul>
-											<li><a href="index.html#/register">As An Volunteer</a></li>
-											<li><a href="index.html#/memberregister">As a Member</a></li>
+											<li><a href="index.html#/register">{{ 'Volunteer' | translate }}</a></li>
+											<li><a href="index.html#/memberregister">{{ 'Member' | translate }}</a></li>
 										</ul>
 									</div>
 								</div><!-- /mainmenu-submenu-inner -->
 							</div><!-- /mainmenu-submenu -->
 						</li>
+						
 						<li class="has-submenu">
-							<a href="features.html">Galleries And Articles</a>
+							<a href="#">{{ 'gallery' | translate }}</a>
 								<div class="mainmenu-submenu">
 								<div class="mainmenu-submenu-inner"> 
 									<div>
-										<h4>Galleries And Articles</h4>
+									<!--	<h4>Galleries And Articles</h4>-->
 										<ul>
-											<li><a href="index.html#/imageGallery">Image Gallery</a></li>
-											<li><a href="index.html#/discssionAndForm">Discussion and Forums</a></li>
-											<li><a href="page-homepage-sample.html">Download</a></li>
-											<li><a href="index.html#/audioGallery">Audio Gallery</a></li>
+											<li><a href="index.html#/imageGallery">{{ 'imagegallery' | translate }}</a></li>
+											<li><a href="index.html#/videoGallery">{{ 'videogallery' | translate }}</a></li>
+											<li><a href="index.html#/discssionAndForm">{{ 'discussion' | translate }}</a></li>
+											<li><a href="index.html#/download">{{ 'download' | translate }}</a></li>
+											<li id="adminPer"><a href="index.html#/eventSubmit">Event/Article Handler</a></li>
+											<li id="adminPer"><a href="index.html#/docUpload">Document Upload</a></li>
+											<!--<li><a href="index.html#/audioGallery">{{ 'audio' | translate }}</a></li>-->
 										</ul>
 									</div>
 								</div><!-- /mainmenu-submenu-inner -->
 							</div><!-- /mainmenu-submenu -->
 						</li>
+						
 					</ul>
 				</nav>
 			</div>
@@ -107,10 +125,9 @@
 					<!-- Slide 1 -->
 					<li class="bg4">
 						<!-- Slide Title -->
-						<h2 class="title">Socio-Cultural Activities</h2>
+						<h2 class="title">{{ 'social' | translate }}</h2>
 						<!-- Slide Text -->
-						<h3 class="subtitle">TMO has been actively organizing social
-					cultural activities like Yakshagana,Himmela classes</h3>
+						<h3 class="subtitle">{{ 'social_title' | translate }}</h3>
 						<!-- Slide Image -->
 						<img class="slide-img" src="img/homepage-slider/culture-udupi.jpg" alt="Slide 1" />
 					</li>
@@ -118,12 +135,9 @@
 					<!-- Slide 2 -->
 					<li class="bg3">
 						<!-- Slide Title -->
-						<h2 class="title">Spiritual Activity</h2>
+						<h2 class="title">{{ 'spiritual' | translate }}</h2>
 						<!-- Slide Text -->
-						<h3 class="subtitle"> TMO has been
-					conducting several activities to convert words into action, Through
-					Parayana, Bhajane, Paata and Pravachana by scholars TMO tries to
-					erdicate the ignorance of society!</h3>
+						<h3 class="subtitle"> {{ 'spiritual_title' | translate }}</h3>
 						<!-- Slide Image -->
 						<img class="slide-img" src="img/homepage-slider/SpiritualActivity.JPG" alt="Slide 2" />
 					</li>
@@ -131,12 +145,9 @@
 					<!-- Slide 3 -->
 					<li class="bg1">
 						<!-- Slide Title -->
-						<h2 class="title">Taulava Madhwa Marriage Matrimonial</h2>
+						<h2 class="title">{{ 'matrimony' | translate }}</h2>
 						<!-- Slide Text -->
-						<h3 class="subtitle">Taulava Maadhwa Okkkotta is working
-					towards Marriage alliance to community's eligible bachelors.On 15th
-					and guidance of Parama Poojya Sri Sri Sugunendra Theertha swamiji
-					of Puttige </h3>
+						<h3 class="subtitle">{{ 'matrimony_title' | translate }} </h3>
 						<!-- Slide Image -->
 						<img class="slide-img" src="img/homepage-slider/TMOMarriageMatrimonial.jpg" alt="Slide 3" />
 					</li>
@@ -159,32 +170,61 @@
 		
 		
 		 <div class="imageSection" id="sectionId">
-				<div id="gallery" style=" margin-left: 150px;">
-					<a href="demo-files/image1.jpg" data-mediabox="gallery-1" data-title="Sample image 1">
-						<img src="demo-files/image1-thumb.jpg" alt="Image 1" />
-					</a>
-					<a href="demo-files/image2.jpg" type="media_type" data-mediabox="gallery-1">
-						<img src="demo-files/image2-thumb.jpg" alt="Image 2" />
-					</a>
-					<a href="demo-files/image3.png"  type="media_type" data-mediabox="gallery-1" data-title="Sample image 3">
-						<img src="demo-files/image3-thumb.png" alt="Image 3" />
-					</a>
-					<a href="https://www.youtube.com/embed/FA_8TY9Z5Zg?rel=0" data-iframe="true" data-mediabox="gallery-1" data-width="853" data-height="480" data-title="Sample video">
-						<img src="demo-files/video-thumb.jpg" alt="Video" />
-					</a>
-				</div>
-		</div>
-   
- <div ng-include src="'footer.html'"></div>
+				<style scoped>
+					@import "css/gallery-image-autofit.css";
+				</style>
+				<div id="gallery" style=" margin-left: 150px; overflow:auto;">
+					  <div class="list" infinite-scroll='loadMore()' id="gallery_child" 
+					infinite-scroll-distance='2' 
+					>
 
+					<div class="row" id ="appendDiv">
+										 <!--<div ng-repeat="x in infiniteList" id="imageSectionId">-->
+										<div  class="col-xs-6 col-md-2 my-parent-element" style="height: 300px;">
+											 <!-- <a href="/AngularTaulavaMadhwaOkkoota/demo-files/{{ x.name }}.{{ x.type }}" type="media_type" data-mediabox="gallery-{{$index}}" data-title="">
+														<img class="imgClass" width="100%" height="100%" style="display: inline-block;" src="/AngularTaulavaMadhwaOkkoota/demo-files/{{ x.name }}.{{ x.type }}"  alt="Image {{$index}}" />
+												</a>-->
+								 		</div>
+										 <!--</div>-->
+						</div> 
+					</div> 		
+				</div>
+				
+		</div>
+		
+ <div ng-include src="'footer.html'"></div>
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+		
+		  <!-- Modal content-->
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			  <h4 class="modal-title">Welcome to Taulava Madhwa Okkoota</h4>
+			</div>
+			<div class="modal-body">
+			  <p>Thank You!! We are looking your presence in all event. Welcome to TMO !!!!</p>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		  </div>
+		  
+		</div>
+	  </div>
         <!-- Javascripts -->
+		
+		
+		
         <script src="js/jquery-1.9.1.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/bootstrap.min.js"></script>
-		<script src="js/angular.min.js"></script>
+		<script src="js/angular.min.js"></script> 
 		<script src="js/angular-route.js"></script>
-        <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+		 <script src="js/oauth.js"></script>
+		  <script src="js/StaticJsonTranslator.js"></script>
         <script src="js/jquery.fitvids.js"></script>
+		<script src="js/leaflet.js"></script>
         <script src="js/jquery.sequence-min.js"></script>
         <script src="js/jquery.bxslider.js"></script>
         <script src="js/main-menu.js"></script>
@@ -193,5 +233,42 @@
 		<script src="js/generic_controller/app.js"></script>
 		<script src="js/highlight.min.js"></script>
 		<script src="js/audio.js"></script>
-    </body>
+		<script src="js/pdf.js"></script>
+		<script src="js/pdf.worker.js"></script>
+		<script src="js/downloadGallery.js"></script>
+		<script src="js/all.js"></script>
+		 <script src="js/angular-google-plus.min.js"></script>
+		<script src="js/ui-bootstrap-tpls-0.3.0.min.js"></script>
+		<script src="js/ui-scroll.js"></script>
+		<script src="js/ng-infinite-scroll.js"></script>
+		<script src="js/serviceDatasource.js"></script>
+		<script src="js/angular-translate.min.js"></script>
+		
+		<script src="js/messageformat.js"></script>
+
+    <script src="js/angular-cookies.js"></script>
+    <script src="js/angular-sanitize.js"></script>
+    <script src="js/angular-translate-interpolation-messageformat.js"></script>
+    <script src="js/angular-translate-storage-cookie.js"></script>
+    <script src="js/angular-translate-storage-local.js"></script>
+    <script src="js/angular-translate-loader-url.js"></script>
+    <script src="js/angular-translate-loader-static-files.js"></script>
+    <script src="js/angular-translate-handler-log.js"></script>
+		
+		
+		<script src="js/videogular.js"></script>
+		<script src="js/vg-controls.js"></script>
+		<script src="js/vg-overlay-play.js"></script>
+		<script src="js/vg-poster.js"></script>
+		<script src="js/vg-buffering.js"></script>
+		<script src="js/angular-progressbar.js"></script>
+		<script src="js/ng-file-upload.js"></script>
+		<script src="js/youtube.js"></script>
+			<script src="js/ng-file-upload-shim.js"></script>
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+        <link rel="stylesheet" href="css/style.css">
+		<!--  <link rel="stylesheet" href="css/videoGallery_cust.css">-->
+       <script type="text/javascript" src="css/angular-animate.js"></script>
+	   <script src="resource/config.js"></script>
+	</body>
 </html>

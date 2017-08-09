@@ -11,62 +11,43 @@
         
         <div class="section">
 	        <div class="container">
-	        	<div class="row">
+			<div class="row" >
+				<div class="col-sm-6 featured-news">
+						<h2>Featured News</h2>
+				</div>
+				<div class="col-sm-6 latest-news">
+	        			<h2>Latest News</h2>
+				</div>
+			</div>
+			<div ng-repeat="num in range(eventList.length, 2)">
+	        	<div class="row" >
 	        		<!-- Featured News -->
 	        		<div class="col-sm-6 featured-news">
-	        			<h2>Featured News</h2>
+	        			
 	        			<div class="row">
-	        				<div class="col-xs-4"><a href="page-blog-post-right-sidebar.html"><img src="img/news1.jpg" alt="Post Title"></a></div>
+	        				<div class="col-xs-4"><a href="page-blog-post-right-sidebar.html"><img src="img/{{eventList[num].imageDource}}.jpg" alt="Post Title"></a></div>
 	        				<div class="col-xs-8">
-	        					<div class="caption"><a href="page-blog-post-right-sidebar.html">Vadiraja Jayanthi</a></div>
-	        					<div class="date">16 May 2013 </div>
-	        					<div class="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. <a href="page-blog-post-right-sidebar.html">Read more...</a></div>
+	        					<div class="caption"><a href="page-blog-post-right-sidebar.html">{{eventList[num].name}}</a></div>
+	        					<div class="date">{{eventList[num].eventDate}}</div>
+	        					<div class="intro">{{eventList[num].description}}</a></div>
 	        				</div>
 	        			</div>
-	        			<div class="row">
-	        				<div class="col-xs-4"><a href="page-blog-post-right-sidebar.html"><img src="img/news2.jpg" alt="Post Title"></a></div>
-	        				<div class="col-xs-8">
-	        					<div class="caption"><a href="page-blog-post-right-sidebar.html">Durga Pooja</a></div>
-	        					<div class="date">14 May 2013 </div>
-	        					<div class="intro">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="page-blog-post-right-sidebar.html">Read more...</a></div>
-	        				</div>
-	        			</div>
-	        			<div class="row">
-	        				<div class="col-xs-4"><a href="page-blog-post-right-sidebar.html"><img src="img/news3.jpg" alt="Post Title"></a></div>
-	        				<div class="col-xs-8">
-	        					<div class="caption"><a href="page-blog-post-right-sidebar.html">Even More News</a></div>
-	        					<div class="date">05 May 2013 </div>
-	        					<div class="intro">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a href="page-blog-post-right-sidebar.html">Read more...</a></div>
-	        				</div>
-	        			</div>
+
 	        		</div>
 	        		<!-- End Featured News -->
 	        		<!-- Latest News -->
 	        		<div class="col-sm-6 latest-news">
-	        			<h2>Latest News</h2>
 	        			<div class="row">
-	        				<div class="col-sm-12">
-	        					<div class="caption"><a href="page-blog-post-right-sidebar.html">New Branch in Kerala</a></div>
-	        					<div class="date">16 May 2016 </div>
-	        					<div class="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. <a href="page-blog-post-right-sidebar.html">Read more...</a></div>
+	        				<div class="col-xs-4"><a href="page-blog-post-right-sidebar.html"><img id="eventImage" alt="Post Title"></a></div>
+	        				<div class="col-xs-8">
+	        					<div class="caption"><a href="page-blog-post-right-sidebar.html">{{eventList[num+1].name}}</a></div>
+	        					<div class="date">{{eventList[num+1].eventDate}}</div>
+	        					<div class="intro">{{eventList[num+1].description}}</div>
 	        				</div>
+						</div>
 	        			</div>
-	        			<div class="row">
-	        				<div class="col-sm-12">
-	        					<div class="caption"><a href="page-blog-post-right-sidebar.html">TMO anniversary</a></div>
-	        					<div class="date">14 May 2013 </div>
-	        					<div class="intro">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="page-blog-post-right-sidebar.html">Read more...</a></div>
-	        				</div>
-	        			</div>	
-	        			<div class="row">
-	        				<div class="col-sm-12">
-	        					<div class="caption"><a href="page-blog-post-right-sidebar.html">Sanskith Class</a></div>
-	        					<div class="date">14 May 2013 </div>
-	        					<div class="intro">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="page-blog-post-right-sidebar.html">Read more...</a></div>
-	        				</div>
-	        			</div>					
-	        		</div>
 	        		<!-- End Featured News -->
 	        	</div>
+				</div>
 	        </div>
 	    </div>
